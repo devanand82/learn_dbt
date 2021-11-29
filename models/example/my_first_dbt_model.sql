@@ -7,7 +7,7 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table', alias='first_model_1') }}
+{{ config(materialized='table', alias='first_model_2') }}
 with source_data as (
 
     select 1 as id
