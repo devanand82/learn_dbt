@@ -28,8 +28,7 @@ on-run-start:  "insert into ANALYTICS.DBT.AUDIT_TABLE (process_name, start_time)
 on-run-end:  "insert into ANALYTICS.DBT.AUDIT_TABLE (process_name, end_time) values ('end_process',current_timestamp()); commit;"
 
 vars:
-  my_first_variable: True
-  my_second_variable: 1
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
