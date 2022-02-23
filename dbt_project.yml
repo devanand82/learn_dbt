@@ -24,6 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_modules"
 
+on-run-start:  "insert into ANALYTICS.DBT.AUDIT_TABLE (process_name, start_time) values ('start_process',current_timestamp()); commit;"
+on-run-end:  "insert into ANALYTICS.DBT.AUDIT_TABLE (process_name, end_time) values ('end_process',current_timestamp()); commit;"
+
 vars:
   my_first_variable: True
   my_second_variable: 1
@@ -33,6 +36,7 @@ vars:
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
+
 models:
   jrtests_learn_dbt1:
     # Config indicated by + and applies to all files under models/example/

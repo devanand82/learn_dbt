@@ -20,3 +20,11 @@ models:
           - unique
           - not_null
   - name: dates
+  - name: snowflake_customer_purchase
+    columns:
+      - name: c_custkey
+        tests:
+          - unique
+          - not_null
+  - name: raw_orders_transform
+  - name: target_table_final

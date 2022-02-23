@@ -1,0 +1,1 @@
+insert into ANALYTICS.DBT.AUDIT_TABLE (process_name, start_time) values ('start_process',current_timestamp()); commit;
